@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "nimi": "Roope Ankka",
+      "puhelin": "050-1111111",
+      "id": "9"
+    },
+    {
+      "puhelin": "092-24172634",
+      "id": "3b95"
+    },
+    {
+      "id": "e6ec",
+      "nimi": "serg",
+      "puhelin": "0383932923"
+    },
+    {
+      "id": "ebe2",
+      "nimi": "ankka",
+      "puhelin": "0336251719"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindromi</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Palindromi-testaaja</h1>
+
+    <!-- Syötteen tarkistuksen toiminta -->
+    <h4>Syötä sana palindromitestin tekemiseksi:</h4>
+    <input
+      type="text"
+      id="wordInput"
+      class="form-control"
+      placeholder="Syötä sana"
+    />
+    <!-- Bootstrap CSS button 1 -->
+    <button onclick="checkPalindrome()" class="btn btn-secondary mt-3">
+      Tarkista, onko sana palindromi
+    </button>
+    <p id="result" class="mt-3"></p>
+
+    <!-- Takaisin pääsivulle - linkki -->
+    <a href="index.html" class="btn btn-primary mt-3"
+      >Palaa takaisin pääsivulle</a
+    >
+
+    <script>
+      // Funktio palindromin tarkistamiseksi
+      function onPalindromi(word) {
+        let length = word.length; // Sanan pituus
+        for (let i = 0; i < Math.floor(length / 2); i++) {
+          if (word[i] !== word[length - 1 - i]) {
+            return false; // Jos merkit eivät täsmää, palindromi ei ole
+          }
+        }
+        return true; // Sana on palindromi
+      }
+
+      // Funktio, joka tarkistaa sanan ja näyttää tuloksen
+      function checkPalindrome() {
+        const input = document.getElementById("wordInput").value.trim();
+        if (input === "") {
+          alert("Syötä sana ennen tarkistusta.");
+        } else {
+          const result = onPalindromi(input);
+          document.getElementById("result").innerText = result
+            ? `"${input}" on palindromi.`
+            : `"${input}" ei ole palindromi.`;
+        }
+      }
+    </script>
+  </body>
+</html>
